@@ -21,10 +21,9 @@
 	<div class="sidebar" style="height: 1000px;">
 
 		<img src="picture/逢坂大河4.jpg" alt="逢坂大河" width="250" height="250"><br/>
-		<br>
-		<br><b>更新日志</b>
-		<br>
-		<iframe src="https://ahaiz.github.io/myhtmlpage/iframe/Iframe.html" width="250" height="250" frameborder="0"></iframe>
+		<br><button type="button" onclick="displayDate()">显示更新日志</button>
+		<br><b>更新日志</b><br>
+		<p id="date"></p>
 
 	</div>
 	<!--这里是每日任务-->
@@ -94,6 +93,11 @@
 <div class="footer">
 	WHO AM I
 </div>
-	  
+
+<script>
+	function displayDate() {
+		document.getElementById("date").innerHTML="<br><b>更新日志</b><br><iframe src="https://ahaiz.github.io/myhtmlpage/iframe/Iframe.html" width="250" height="250" frameborder="0"></iframe>";
+	}
+</script>
 </body>
 </html>
