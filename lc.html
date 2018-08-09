@@ -13,6 +13,7 @@
 	.header {position: fixed;left: 10%;z-index:110;width: 500px;height: 100px;
 				background: #9A9A9A;}
 	.zhengwen {position: relative;top: 150px;z-index:100;}
+
 	</style>
 </head>
 
@@ -78,9 +79,24 @@
 
 </div>
 
+<div class="zhengwen">
+	<h2>对 CSS-float 的理解</h2>
+	<p>float在字面意思上是浮动的意思，大多数教程采用的也是这样的说法，将使用了float属性的元素与其他元素的关系比喻成浮动。但这其实相当不容易理解（对我来说），浮动在我看来是分层，使用了浮动属性的元素与其他元素形成了层级关系，使得两个元素相互之间可以重叠展示，但：</p>
+	<div>
+		<span style="float: left;border-style: double;">这个双线span1设置了浮动！</span>
+		<span style="border-style: solid;">这个实线span2没有设置浮动！</span>
+	</div>
+	<p>可以看出，设置了浮动的元素没有如设想的那样叠在没有浮动的元素上方。<br>因此，我将float重新理解为一种吸斥关系：在没有设置float属性的时候，元素之间相互吸附，紧密贴合在一起；而当某个元素设置了float属性时，这个元素就相当于获得了斥力，它不再遵循吸力影响下的排列原则，独立于其他元素之外，其他元素则要在排斥float元素的同时遵循原有的排列原则。</p>
+	<div>
+		<p style="width: 200px;height: 168px;margin: 16px;border-style: double;float: left;overflow: hidden;text-overflow: ellipsis;">鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡<span style="border-style: dotted;float: left;">我飘了！</span>鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡</p>
+		<p style="width: 200px;height: 168px;margin: 16px;border-style: double;float: left;overflow: hidden;text-overflow: ellipsis;">鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡<span style="border-style: dotted;float: right;">我飘了！</span>鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡<span style="border-style: dotted;float: right;">我飘了！</span>鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡</p>
+		<p style="width: 200px;height: 168px;margin: 16px;border-style: double;float: left;overflow: hidden;text-overflow: ellipsis;">鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡<span style="border-style: dotted;float: right;position: relative;right: 100px;">我飘了！</span>鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡</p>
 
 
+	</div>
+</div>
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
