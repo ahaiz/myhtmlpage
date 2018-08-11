@@ -9,10 +9,23 @@
 	.sidebar {float:right;position:relative;left:10%;z-index:110;}
 	.footer {padding:0px; background: #9A9A9A; position:fixed; left:15% ; bottom: 0; width:auto;z-index:110 ;}
 	.leftbar {;line-height:30px;height:1000px;width:155px;float:left;}
-	.biaoge {float: right;position: fixed;left: 60%;}
+	.biaoge {float: right;position: fixed;left: 60%;z-index: 150;}
 	.header {position: fixed;left: 10%;z-index:110;width: 500px;height: 100px;
 				background: #9A9A9A;}
 	.zhengwen {position: relative;top: 150px;z-index:100;}
+	.guide {position: fixed;left: 10%;top: 15%;width: 60%;z-index: 150;}
+	#transverse {margin: 0;padding: 0;list-style-type: none;}
+	#transverse>li {float: left;}
+	#transverse>li>a {display: block;color: #000;padding: 10px 16px;}
+	#transverse>li>a:link {color: black;background-color: #66c2ff;text-decoration: none;}
+	#transverse>li>a:visited {color: black;}
+	#transverse>li>a:hover {color: white;background-color: #e5f2ff;text-shadow: 1px 1px 0 #444;}
+	#transverse>li.dropdown:hover .dropdown-content {display: block;}
+	.dropdown {}
+	.dropdown-content {display: none;position: absolute;background-color: #f9f9f9;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);z-index: 150;}
+	.dropdown-content ul {list-style-type: none;margin: 0;padding: 0;}
+	.dropdown-content li {}
+	.dropdown-content a {display: block;text-decoration: none;padding: 10px 16px;color: black;}
 
 	</style>
 </head>
@@ -65,6 +78,24 @@
 	
 </div>
 
+<div class="guide">
+	<!--这里是横向导航栏-->
+	<ul id="transverse">
+		<li><a href="">主页</a></li>
+		<li class="dropdown">
+			<a href="#">心得</a>
+			<div class="dropdown-content">
+				<ul>
+					<li><a href="#a1flo">关于float</a></li>
+					<li><a href="#a2gui">关于导航栏</a></li>
+				</ul>
+			</div>
+		</li>
+		<li><a href="#">试验页面</a></li>
+		<li style="float: right;"><a href="#">关于</a></li>
+	</ul>
+</div>
+
 <div class="zhengwen">
 	欢迎！这是我的第一个网页。<br>
 	<span style="TEXT-DECORATION: line-through">很粗糙对吧！我相信它会变得越来越好的！</span><br>
@@ -80,13 +111,14 @@
 </div>
 
 <div class="zhengwen">
-	<h2>对 CSS-float 的理解</h2>
+	<h2 id="a1flo">对 CSS-float 的理解</h2>
 	<p>float在字面意思上是浮动的意思，大多数教程采用的也是这样的说法，将使用了float属性的元素与其他元素的关系比喻成浮动。但这其实相当不容易理解（对我来说），浮动在我看来是分层，使用了浮动属性的元素与其他元素形成了层级关系，使得两个元素相互之间可以重叠展示，但：</p>
 	<div>
 		<span style="float: left;border-style: double;">这个双线span1设置了浮动！</span>
 		<span style="border-style: solid;">这个实线span2没有设置浮动！</span>
 	</div>
-	<p>可以看出，设置了浮动的元素没有如设想的那样叠在没有浮动的元素上方。<br>因此，我将float重新理解为一种吸斥关系：在没有设置float属性的时候，元素之间相互吸附，紧密贴合在一起；而当某个元素设置了float属性时，这个元素就相当于获得了斥力，它不再遵循吸力影响下的排列原则，独立于其他元素之外，其他元素则要在排斥float元素的同时遵循原有的排列原则。</p>
+	<p>可以看出，设置了浮动的元素没有如设想的那样叠在没有浮动的元素上方。<br>因此，我将float重新理解为一种同平面内的吸斥关系：在没有设置float属性的时候，元素之间相互吸附，紧密贴合在一起；而当某个元素设置了float属性时，这个元素就相当于获得了斥力，它不再遵循吸力影响下的排列原则，独立于其他元素之外，其他元素则要在排斥float元素的同时遵循原有的排列原则。</p>
+	<p>上面是我瞎编的，最好去认真理解下“文档流”的概念</p>
 	<div>
 		<p style="width: 200px;height: 168px;margin: 16px;border-style: double;float: left;overflow: hidden;text-overflow: ellipsis;">鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡<span style="border-style: dotted;float: left;">我飘了！</span>鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡</p>
 		<p style="width: 200px;height: 168px;margin: 16px;border-style: double;float: left;overflow: hidden;text-overflow: ellipsis;">鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡<span style="border-style: dotted;float: right;">我飘了！</span>鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡<span style="border-style: dotted;float: right;">我飘了！</span>鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡鸡</p>
@@ -94,6 +126,25 @@
 
 
 	</div>
+</div>
+
+<div class="zhengwen" style="clear: both;">
+	<h2 id="a2gui">导航栏与下拉菜单实践记录</h2>
+	<p>在HTML页面中，建立导航栏与菜单基本使用&lt;ul&gt;列表标签，在各个列表项中添加&lt;a&gt;链接标签实现。其中横向列表利用float实现。</p>
+	<div>
+		<ul style="margin: 16px;padding: 0;width: auto;border-style: double;float: left;list-style-type: none;">
+			<li><a href="#">列表项一</a></li>
+			<li><a href="#">列表项二</a></li>
+			<li><a href="#">列表项三</a></li>
+		</ul>
+		<ul style="margin: 16px;padding: 0;width: auto;border-style: double;float: left;list-style-type: none;">
+			<li style="float: left;"><a href="#">列表项一</a></li>
+			<li style="float: left;"><a href="#">列表项二</a></li>
+			<li style="float: left;"><a href="#">列表项三</a></li>
+		</ul>
+	</div>
+	<p style="clear: both;">整体架构建立基本上没有难度，各标签与CSS运用上不犯错即可。</p>
+	<p>触发式下拉菜单需要运用到伪类hover，并结合CSS dispay block，使一个元素处于hover状态时，将display none隐藏状态的菜单改为display block显示，实现触发式显示菜单。</p>
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
