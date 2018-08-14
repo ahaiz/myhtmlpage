@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clothes-like Design</title>
+	<style type="text/css">
+		body {font-size: 100%;
+			background-color: #FFFF99;}
+
+		h1.head {position: absolute;bottom: 100%;left: -5%;
+			margin: 0;
+			font-size: 4.375em;
+			color: black;
+			font-family: Tahoma, Geneva, sans-serif;
+			font-style:italic;
+			font-weight: 1000;}
+
+		#main {background-color: white;
+			position: relative;
+			margin-left: 18%;margin-right: 18%;margin-top: 17.5%;margin-bottom: 0;
+			height: auto;}
+.wrapper {
+  text-transform: uppercase;
+  background: #ececec;
+  color: #555;
+  cursor: help;
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 20px;
+  margin: 100px 75px 10px 75px;
+  padding: 15px 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+}
+
+.wrapper .tooltip {
+  background: #1496bb;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 20px;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #1496bb 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+  
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+	</style>
+</head>
+<body>
+<!--顶部大标题-->
+<div>
+
+</div>
+
+<div id="main" style="">
+	Hello My Friend!
+	<h1 class="head">Clothes-like Design</h1>
+
+</div>
+
+
+<div>
+  <div class="wrapper">
+    I have a tooltip.
+    <div class="tooltip">I am a tooltip!</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
