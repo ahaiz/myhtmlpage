@@ -16,6 +16,11 @@
             else if (/android/i.test(userAgent)) {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.bpgames.hph.a.g2#';
             }
+            // 如果既不是 iOS 也不是 Android，则重定向到 Google
+            else {
+                window.location.href = 'https://www.google.com';
+            }
+        }
         }
 
         // 页面加载完成后自动重定向
