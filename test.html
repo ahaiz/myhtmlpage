@@ -1,13 +1,28 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<title>更新型网页的TEST</title>
-</head>	
+    <meta charset="UTF-8">
+    <title>应用商店重定向</title>
+    <script>
+        // 检测操作系统类型
+        function redirectToStore() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
+            // 检测iOS设备
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://apps.apple.com/app/id6478843819';
+            }
+            // 检测Android设备
+            else if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.bpgames.hph.a.g2#';
+            }
+        }
+
+        // 页面加载完成后自动重定向
+        window.onload = redirectToStore;
+    </script>
+</head>
 <body>
-	<textarea>
-		heizheshi
-	</textarea>
+    <h1>正在重定向到应用商店...</h1>
 </body>
 </html>
