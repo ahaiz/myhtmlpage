@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <title>应用商店重定向</title>
     <script>
-        // 检测操作系统类型
-        function redirectToStore() {
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取用户代理信息
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            // 检测iOS设备
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                window.location.href = 'https://apps.apple.com/app/id6478843819';
-            }
-            // 检测Android设备
-            else if (/android/i.test(userAgent)) {
-                window.location.href = 'https://play.google.com/store/apps/details?id=com.bpgames.hph.a.g2#';
-            }
-            // 如果既不是 iOS 也不是 Android，则重定向到 Google
-            else {
-                window.location.href = 'https://www.google.com';
-            }
-        }
-        }
+            // 定义重定向链接
+            const iosStoreLink = 'https://apps.apple.com/app/id6478843819';
+            const androidStoreLink = 'https://play.google.com/store/apps/details?id=com.bpgames.hph.a.g2#';
+            const defaultLink = 'https://www.google.com';
 
-        // 页面加载完成后自动重定向
-        window.onload = redirectToStore;
+            // 检测 iOS 设备
+            if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                window.location.replace(iosStoreLink);
+            }
+            // 检测 Android 设备
+            else if (/Android/i.test(userAgent)) {
+                window.location.replace(androidStoreLink);
+            }
+            // 如果不是 iOS 或 Android 设备，则跳转到默认链接
+            else {
+                window.location.replace(defaultLink);
+            }
+        });
     </script>
 </head>
 <body>
-    <h1>正在重定向到应用商店...</h1>
+    <h1>正在重定向，请稍候...</h1>
 </body>
 </html>
